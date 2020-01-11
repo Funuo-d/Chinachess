@@ -14,7 +14,9 @@ enum chess   //枚举每一个棋子，由于两方不能动对方的棋子，故只能分开枚举
 /******************************************************
  *菜单除开始游戏以外的选项都在此                      *
  ******************************************************/
-void Help()           //帮助选项
+
+//帮助选项
+void Help()           
 {
 	printf("\n********************************\n本软件还在测试阶段。\n********************************\n\n");
 }
@@ -36,7 +38,7 @@ void GameConfig(int *p)
 		printf("您当前系统识别设置为Linux\n");
 	}
 	printf("系统修改为？（0.Linux   1.Windows）：");
-	scanf("%d", p);
+	scanf_s("%d", p);
 	if (*p > 1 || *p < 0)
 	{
 		printf("值超范围，修改失败！\n");
@@ -55,7 +57,7 @@ int Homepage()
 	printf("1.开始游戏\n2.设    置\n3.帮    助\n4.关    于\n5.退    出\n请输入选项：");
 	for (int i = 0; i < 2;)
 	{
-		scanf("%d", &a);
+		scanf_s("%d", &a);
 		if (a > 5 || a < 1)
 		{
 			printf("输入的值无效，请重新输入:");
@@ -694,7 +696,7 @@ void MoveOrder_R()
 	for (int i = 0; i < 1;)
 	{
 		fflush(stdin);
-		scanf("%d%d", &line, &column);
+		scanf_s("%d%d", &line, &column);
 		line = line - 11;
 		column = column - 11;
 		a = line/10; b = line % 10; c = column/10; d = column % 10;
@@ -950,7 +952,7 @@ void MoveOrder_B()
 	for (int i = 0; i < 1;)
 	{
 		fflush(stdin);
-		scanf("%d%d", &line, &column);
+		scanf_s("%d%d", &line, &column);
 		line = line - 11;
 		column = column - 11;
 		a = line / 10; b = line % 10; c = column / 10; d = column % 10;
